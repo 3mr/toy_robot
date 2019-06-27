@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-12 col-md-3">
+    <%= render partial: 'moves' %>
+  </div>
+
+  <div class="col">
+    <!-- draw the table -->
+    <% 4.downto(0).each do |y| %>
+      <div class="row">
+        <% 0.upto(4).each do |x| %>
+          <div class="col-md-2 alert alert-primary" style="margin-left: 2px" id=<%= "x_#{x}_y_#{y}" %>>
+            <h4 class="alert-heading" id=<%= "x_#{x}_y_#{y}_facing" %>>
+              &nbsp;
+            </h4>
+            <small><%= "(#{x}, #{y})" %></small>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $( document ).ready(function() {
+    $("#<%= "x_#{@robot.x}_y_#{@robot.x}" %>").addClass("is-here");
+    $("#<%= "x_#{@robot.x}_y_#{@robot.x}_facing" %>").text("<%= @robot.facing %>");
+  });
+</script>

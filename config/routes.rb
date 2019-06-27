@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  # devise routes
-  devise_for :users
-
   # root route
-  root 'rooms#index'
+  root 'table#surface'
 
-  # resources
-  resources :rooms
-  resources :messages
+  post 'brain/think', to: 'brain#think'
 end
