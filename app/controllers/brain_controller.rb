@@ -8,12 +8,10 @@ class BrainController < ApplicationController
     commands.each do |command|
       @robot.send(command[:method_to_call].to_sym, command[:text])
     end
+  end
 
-    puts '.................'
-    puts '.................'
-    puts @robot.inspect
-    puts '.................'
-    puts '.................'
+  def drop
+    @robot.drop
   end
 
   protected

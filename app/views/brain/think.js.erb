@@ -1,0 +1,7 @@
+$( document ).ready(function() {
+  $("div").removeClass("is-here");
+  $("h4").text("");
+  $("#out_of_table").text("");
+  $("#<%= "x_#{@robot.x}_y_#{@robot.y}" %>").addClass("is-here");
+  $("#<%= "x_#{@robot.x}_y_#{@robot.y}_facing" %>").text("<%= @robot.facing %>");
+});
