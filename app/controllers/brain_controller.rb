@@ -3,11 +3,17 @@ class BrainController < ApplicationController
   before_action :load_entities
 
   def think
-    commands = CommandsAnalyserService.execute(params[:moves])
+    commands = @robot.analys_commands(params[:moves])
 
     commands.each do |command|
-      puts command.inspect
+      @robot.send(command[:method_to_call].to_sym, command[:text])
     end
+
+    puts '.................'
+    puts '.................'
+    puts @robot.inspect
+    puts '.................'
+    puts '.................'
   end
 
   protected

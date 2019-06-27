@@ -1,25 +1,26 @@
-class CommandsAnalyserService
-  class << self
-    def execute(moves_string)
+module Commandable
+  extend ActiveSupport::Concern
+
+  included do
+    def analys_commands(moves_string)
       commands = []
       moves_string.split("\n").each do |command|
         command_and_handler = {}
         command_and_handler[:text] = command
-        command_and_handler[:handler] = detect_command_handler(command)
+        command_and_handler[:method_to_call] = detect_callable_method(command)
         commands << command_and_handler
       end
       commands
     end
 
-    def detect_command_handler(command)
+    def detect_callable_method(command)
       if command.include?('PLACE') || command.include?('MOVE')
-        'MovementHandlerService'
+        'move'
       elsif command.include?('LEFT') || command.include?('RIGHT')
-        'RotationHandlerService'
+        'rotate'
       elsif command.include?('REPORT')
-        'ReportingHandlerService'
+        'report'
       end
     end
-
   end
 end
