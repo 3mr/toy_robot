@@ -21,3 +21,10 @@ follow those steps to setup the app:
 * If you want to take the robot out of the table you can click ```Drop robot``` button.
 
 * As I store the robot last location in the DB, you will find it at the last place if you refreshed the page, the same goes if you dropped it and refreshed the page, you will see an error message telling you that the robot is out of the table.
+
+* If you asked the robot to perform the ```REPORT``` command, please check the server logs to see it's report, it will look like this in the server log
+====================================================================================================
+====================================================================================================
+3,3,NORTH
+====================================================================================================
+====================================================================================================
