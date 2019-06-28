@@ -1,15 +1,20 @@
 <div class="mb-3">
   <%= form_tag brain_think_path, remote: true do %>
-    <h3 class="alert-heading">
-      Moves
-    </h3>
+    <div class="alert alert-primary">
+      <h3 class="alert-heading">
+        <b>Commands</b> <br /> area
+      </h3>
+    </div>
+
     <div class="input-group mb-3">
       <%= text_area_tag :moves, nil, class: 'moves-textarea' %>
     </div>
 
     <div class="input-group mb-3">
-      <%= submit_tag "Apply moves", class: 'btn btn-primary' %>
-      <%= link_to "Drop robot",  brain_drop_path, class: 'btn btn-danger', style: 'margin-left: 10px', remote: true %>
+      <%= submit_tag "Apply moves", class: 'btn btn-primary', style: 'width: 100%' %>
+    </div>
+    <div class="input-group mb-3">
+      <%= link_to "Drop robot",  brain_drop_path, class: 'btn btn-danger', style: 'width: 100%', remote: true %>
     </div>
   <% end %>
 </div>
