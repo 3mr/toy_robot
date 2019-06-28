@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+IT'S VERY IMPORTANT TO READ THIS FILE BEFORE RUNNING THE APP.
 
-Things you may want to cover:
+follow those steps to setup the app:
 
-* Ruby version
+* clone the repo or unzip the downloaded file
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* run ```rake db:create```
