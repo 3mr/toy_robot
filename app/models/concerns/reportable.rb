@@ -3,11 +3,11 @@ module Reportable
 
   included do
     def report(report_type)
-      puts '=' * 100
-      puts '=' * 100
+      puts '=' * 30
+      puts '=' * 30
       puts "#{self.x},#{self.y},#{self.facing.upcase}"
-      puts '=' * 100
-      puts '=' * 100
+      puts '=' * 30
+      puts '=' * 30
     end
   end
 end
